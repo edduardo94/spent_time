@@ -5,7 +5,7 @@ module Users
     end
 
     rule(:id) do
-      key.failure("must higher than 0 ") if value == 0
+      key.failure("id must higher than") if value == 0
     end
   end
 end

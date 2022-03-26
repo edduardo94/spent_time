@@ -39,7 +39,7 @@ module Api
 
           op.failure do |failure|
             render json: { code: 404,
-                           status: Message.not_found("note"),
+                           status: Message.not_found("user"),
                            error: failure }, status: 404
           end
         end
