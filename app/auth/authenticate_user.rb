@@ -3,9 +3,9 @@ class AuthenticateUser
     user = user(email, password)
     token = JsonWebToken.encode(user_id: user.id) if user
     if token
-      return { token: token, user: user }
+      { token: token, user: user.attributes.except("password_digest") }
     else
-      return ""
+      nil
     end
   end
 
