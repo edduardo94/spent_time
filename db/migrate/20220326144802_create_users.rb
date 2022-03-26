@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.timestamps
 
       t.index ["email"], name: "index_users_on_email", unique: true
+      t.index ["login"], name: "index_users_on_login", unique: true
     end
   end
 end

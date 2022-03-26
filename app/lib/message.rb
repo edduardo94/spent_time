@@ -23,9 +23,9 @@ class Message
   def self.account_created
     "Account created successfully"
   end
-
+  ""
   def self.account_already_exists
-    "Conta ja existente"
+    "Account alredy exists"
   end
 
   def self.account_not_created
