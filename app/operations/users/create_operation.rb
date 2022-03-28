@@ -25,7 +25,6 @@ module Users
       rescue ActiveRecord::RecordNotUnique => e
         Failure(:account_already_exists)
       rescue => e
-        binding.break
         Failure(e)
       end
     end
