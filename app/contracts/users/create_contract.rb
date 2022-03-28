@@ -10,11 +10,11 @@ module Users
     end
 
     rule(:name) do
-      key.failure("name must not to be null") if value.nil?
+      key.failure("name must not to be null") if value.nil? || value.empty?
     end
 
     rule(:login) do
-      key.failure("login must not to be null") if value.nil?
+      key.failure("login must not to be null") if value.nil? || value.empty?
     end
 
     rule(:email) do
@@ -22,7 +22,7 @@ module Users
     end
 
     rule(:password) do
-      key.failure("password must not to be null") if value.nil?
+      key.failure("password must not to be null") if value.nil? || value.empty?
     end
   end
 end
