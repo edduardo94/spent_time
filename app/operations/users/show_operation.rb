@@ -29,7 +29,7 @@ module Users
 
     def result(context)
       user = context[:user]
-      result = { user: user.attributes.except("password_digest") }
+      result = { user: user }
       Success(result)
     end
   end
