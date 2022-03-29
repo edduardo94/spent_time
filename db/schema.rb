@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_28_134415) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_29_185202) do
   create_table "projects", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -25,6 +25,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_28_134415) do
     t.index ["user_id"], name: "index_projects_users_on_user_id"
   end
 
+  create_table "spent_hours", charset: "utf8mb4", force: :cascade do |t|
+    t.timestamp "started_at"
+    t.timestamp "ended_at"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_spent_hours_on_project_id"
+    t.index ["user_id"], name: "index_spent_hours_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -35,5 +44,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_28_134415) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["login"], name: "index_users_on_login", unique: true
   end
-
 end

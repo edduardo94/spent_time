@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       get "projects/:id", to: "projects#show"
       put "projects/:id", to: "projects#update"
       post "authenticate", to: "auth#authenticate"
+      post "times", to: "spent_hours#create"
+      get "times/:project_id", to: "spent_hours#show"
+      put "times/:id", to: "spent_hours#update"
     end
   end
 end
