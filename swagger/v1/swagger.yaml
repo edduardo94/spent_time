@@ -7,11 +7,22 @@ paths:
   "/api/v1/authenticate":
     post:
       summary: authenticate auth
+      parameters:
+      - name: login
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: successful
+        '401':
+          description: unauthorized
 servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: localhost:3000
