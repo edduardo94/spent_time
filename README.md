@@ -6,5 +6,10 @@ Para rodar o projeto necessitará que o docker e docker-compose estejam instalad
 ```
 docker compose build
 docker compose run --rm web bin/rails db:setup
+```
 
+## Rodando o projeto localmente
+```
+docker compose up
+```
 
